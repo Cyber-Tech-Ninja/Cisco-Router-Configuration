@@ -1,9 +1,9 @@
 # Router-and-Switch-Configuration
  CLI Configuration Modes
-The basic CLI modes that we will be referring below are as following:
+The basic CLI modes that we will be referring to below are as follows:
 Router> <– User EXEC Mode (Default mode when you log in to the router CLI)
-Router#	<– Privileged EXEC mode (Enter enable to get into this mode)
-Router(config)#	<– Global Configuration Mode (enter configure terminal to switch to this mode)
+Router#	<– Privileged EXEC mode (Enter <enable> to get into this mode)
+Router(config)#	<– Global Configuration Mode (enter <configure terminal> to switch to this mode)
 Router(config-if)# <– Interface Configuration Mode 
 Router(config-line)# <– Line Configuration Mode
 
@@ -16,12 +16,17 @@ STEP2
 Configure Hostname ----> hostname <your hostname>
 
 STEP3
-To set the interface to configure ---> interface GigabitEthernet 0/0
 
 #Configure IP address for the interface you need to switch to the interface mode
+To configure the internal interface ---> interface GigabitEthernet 0/0
 Configure ip address ---> ip address <ip address x subnet mask>
                     ----> no shutdown
                     ----> exit
+
+To configure the external interface ---> interface GigabitEthernet 0/1
+Configure ip address ---> ip address <ip address x subnet mask>
+                    ----> no shutdown
+                    ----> exit                    
 STEP4 
 Configure Routing (Static or Dynamic) switch back to global config mode
 To set static route ---> ip route <destination network> <subnet mastk> <gateway>
@@ -55,7 +60,7 @@ My-Router(config)# ip nat inside source list 1 interface GigabitEthernet 0/0 ove
 STEP8
 Configure DHCP
 A Cisco router can be configured as a DHCP server to assign IP addresses dynamically
-to internal hosts. In privileged EXEC mode.Configure the DHCP pool to assign addresses to internal hosts
+to internal hosts. In privileged EXEC mode. Configure the DHCP pool to assign addresses to internal hosts
 my-router# ------>ip dhcp pool lan-pool
                   network 192.168.10.0 255.255.255.0
                   default-router 192.168.10.1
