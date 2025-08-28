@@ -26,7 +26,8 @@ Configure ip address ---> ip address <ip address x subnet mask>
 To configure the external interface ---> interface GigabitEthernet 0/1
 Configure ip address ---> ip address <ip address x subnet mask>
                     ----> no shutdown
-                    ----> exit                    
+                    ----> exit  
+                    ----> wr
 STEP4 
 Configure Routing (Static or Dynamic) switch back to global config mode
 To set static route ---> ip route <destination network> <subnet mastk> <gateway>
